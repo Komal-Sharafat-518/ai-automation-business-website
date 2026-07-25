@@ -37,19 +37,20 @@ The goal is to help businesses reduce missed opportunities and provide a faster,
 
 This project was created as a dedicated business website to present AI automation services and demonstrate how AI-powered solutions can help businesses improve their operations and customer experience.
 
-## 🌐 Live Website & Deployment
+## 🌐 Live Website
 
-The website is deployed using **Vercel** for fast and reliable hosting.
+Explore the live website to learn more about my AI automation solutions and services:
 
-🔗 **Live Website:** [ai-automation-business-website.vercel.app](https://ai-automation-business-website.vercel.app)
+**🔗 [Visit NextStep Digital](https://ai-automation-business-website.vercel.app/)**
 
-## 📬 Contact
+## 📬 Get in Touch
 
-If you're interested in AI automation solutions or would like to discuss a custom automation project, feel free to get in touch through the website.
+Interested in AI automation or looking to streamline your business processes? I'd love to connect and discuss how automation can help your business work smarter and more efficiently.
 
-* **Email:** [your-email@gmail.com](komalsharafat0@gmail.com)
-* **LinkedIn:** [Connect with me on LinkedIn]([YOUR_LINKEDIN_URL](https://www.linkedin.com/in/komal-sharafat-93697538b/ ))
+* **📧 Email:** [komalsharafat0@gmail.com](mailto:komalsharafat0@gmail.com)
+* **💼 LinkedIn:** [Connect with me on LinkedIn](https://www.linkedin.com/in/komal-sharafat-93697538b/)
 
 ---
 
-**Built with AI, automation, and a focus on solving real business problems.**
+*Built with AI, automation, and a focus on solving real business problems.*
+
