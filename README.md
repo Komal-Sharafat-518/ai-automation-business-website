@@ -47,8 +47,8 @@ The website is deployed using **Vercel** for fast and reliable hosting.
 
 If you're interested in AI automation solutions or would like to discuss a custom automation project, feel free to get in touch through the website.
 
-* **Email:** [your-email@gmail.com](mailto:your-email@gmail.com)
-* **LinkedIn:** [Connect with me on LinkedIn](YOUR_LINKEDIN_URL)
+* **Email:** [your-email@gmail.com](komalsharafat0@gmail.com)
+* **LinkedIn:** [Connect with me on LinkedIn]([YOUR_LINKEDIN_URL](https://www.linkedin.com/in/komal-sharafat-93697538b/ ))
 
 ---
 
