@@ -37,14 +37,18 @@ The goal is to help businesses reduce missed opportunities and provide a faster,
 
 This project was created as a dedicated business website to present AI automation services and demonstrate how AI-powered solutions can help businesses improve their operations and customer experience.
 
-## 🌐 Deployment
+## 🌐 Live Website & Deployment
 
 The website is deployed using **Vercel** for fast and reliable hosting.
-ai-automation-business-website.vercel.app
+
+🔗 **Live Website:** [ai-automation-business-website.vercel.app](https://ai-automation-business-website.vercel.app)
 
 ## 📬 Contact
 
 If you're interested in AI automation solutions or would like to discuss a custom automation project, feel free to get in touch through the website.
+
+* **Email:** [your-email@gmail.com](mailto:your-email@gmail.com)
+* **LinkedIn:** [Connect with me on LinkedIn](YOUR_LINKEDIN_URL)
 
 ---
 
