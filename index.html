@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NextStep Digital — Websites, Software &amp; AI Automation</title>
+<meta name="description" content="NextStep Digital builds websites, custom software, and AI automation that give real businesses a next step forward. Founded by Komal Sharafat.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #11151F;
+    --ink-2: #1A2033;
+    --ink-3: #232B41;
+    --paper: #F4F2EC;
+    --paper-2: #ECE9E0;
+    --text-dark: #191F2B;
+    --muted: #5F6675;
+    --muted-light: #9BA3C4;
+    --amber: #E7A23E;
+    --amber-soft: rgba(231,162,62,0.14);
+    --teal: #2E9C90;
+    --teal-soft: rgba(46,156,144,0.14);
+    --line-dark: rgba(244,242,236,0.1);
+    --line-light: rgba(25,31,43,0.1);
+    --radius: 14px;
+    --disp: 'Space Grotesk', sans-serif;
+    --body: 'IBM Plex Sans', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+  }
+
+  *{margin:0; padding:0; box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family: var(--body);
+    background: var(--paper);
+    color: var(--text-dark);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+  img,svg{display:block; max-width:100%;}
+  .container{
+    width:100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  section{position:relative;}
+  .eyebrow{
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--amber);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom: 18px;
+  }
+  .eyebrow::before{
+    content:"";
+    width: 22px;
+    height: 1px;
+    background: var(--amber);
+    display:inline-block;
+  }
+  h1,h2,h3,h4{
+    font-family: var(--disp);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: inherit;
+  }
+  h2{
+    font-size: clamp(1.9rem, 3.2vw, 2.7rem);
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+  }
+  .section-head{
+    max-width: 640px;
+    margin-bottom: 56px;
+  }
+  .section-head p{
+    color: var(--muted);
+    font-size: 1.04rem;
+    margin-top: 16px;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap: 10px;
+    font-family: var(--body);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 14px 26px;
+    border-radius: 999px;
+    cursor:pointer;
+    border: 1px solid transparent;
+    transition: transform .25s ease, background .25s ease, border-color .25s ease, color .25s ease;
+  }
+  .btn:hover{ transform: translateY(-2px); }
+  .btn-primary{
+    background: var(--amber);
+    color: #1A1408;
+  }
+  .btn-primary:hover{ background: #f0b158; }
+  .btn-ghost-dark{
+    border-color: var(--line-dark);
+    color: var(--paper);
+  }
+  .btn-ghost-dark:hover{ border-color: var(--amber); color: var(--amber); }
+  .btn-ghost-light{
+    border-color: var(--line-light);
+    color: var(--text-dark);
+  }
+  .btn-ghost-light:hover{ border-color: var(--ink); }
+  .btn svg{ width:16px; height:16px; }
+
+  /* ---------- NAV ---------- */
+  header{
+    position: fixed;
+    top: 0; left:0; right:0;
+    z-index: 100;
+    background: rgba(17,21,31,0.82);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line-dark);
+  }
+  nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: 18px 32px;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+  .brand{
+    font-family: var(--disp);
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--paper);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .nav-links{
+    display:flex;
+    align-items:center;
+    gap: 34px;
+  }
+  .nav-links a{
+    font-size: 0.9rem;
+    color: var(--muted-light);
+    font-weight: 500;
+    transition: color .2s ease;
+  }
+  .nav-links a:hover{ color: var(--paper); }
+  .nav-cta{ display:flex; align-items:center; gap: 18px; }
+  .nav-toggle{
+    display:none;
+    flex-direction:column;
+    gap:5px;
+    background:none; border:none; cursor:pointer;
+  }
+  .nav-toggle span{
+    width: 22px; height:2px; background: var(--paper);
+  }
+  .mobile-panel{
+    display:none;
+    position: fixed; top:64px; left:0; right:0;
+    background: var(--ink); border-bottom: 1px solid var(--line-dark);
+    padding: 20px 32px 28px;
+    z-index: 99;
+  }
+  .mobile-panel a{
+    display:block;
+    padding: 12px 0;
+    color: var(--paper);
+    border-bottom: 1px solid var(--line-dark);
+    font-size: 0.98rem;
+  }
+  .mobile-panel.open{ display:block; }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background: var(--ink);
+    color: var(--paper);
+    padding: 168px 0 120px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    width: 700px; height:700px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(231,162,62,0.16), transparent 70%);
+    top:-260px; right:-220px;
+    pointer-events:none;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 64px;
+    align-items:center;
+  }
+  .hero h1{
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    line-height: 1.06;
+    letter-spacing: -0.02em;
+  }
+  .hero h1 em{
+    font-style: normal;
+    background: linear-gradient(90deg, var(--amber), #f3c98a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .hero p.lead{
+    margin-top: 24px;
+    font-size: 1.12rem;
+    color: var(--muted-light);
+    max-width: 500px;
+  }
+  .hero-ctas{
+    display:flex; gap:16px; margin-top: 38px; flex-wrap:wrap;
+  }
+  .hero-meta{
+    margin-top: 56px;
+    display:flex;
+    gap: 40px;
+    flex-wrap:wrap;
+  }
+  .hero-meta div{ border-left: 2px solid var(--amber); padding-left: 14px; }
+  .hero-meta .num{
+    font-family: var(--disp);
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  .hero-meta .label{
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--muted-light);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* ---------- SIGNAL DIAGRAM (signature element) ---------- */
+  .signal-card{
+    background: var(--ink-2);
+    border: 1px solid var(--line-dark);
+    border-radius: 20px;
+    padding: 28px 26px 30px;
+    position: relative;
+  }
+  .signal-card .signal-label{
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform:uppercase;
+    color: var(--muted-light);
+    display:flex;
+    justify-content:space-between;
+    margin-bottom: 18px;
+  }
+  .signal-card .signal-label .dot{
+    width:8px; height:8px; border-radius:50%;
+    background: var(--teal);
+    display:inline-block;
+    margin-right:6px;
+    box-shadow: 0 0 0 4px var(--teal-soft);
+  }
+  .node{
+    display:flex;
+    align-items:flex-start;
+    gap: 14px;
+    padding: 13px 4px;
+  }
+  .node .pip{
+    width: 30px; height:30px;
+    border-radius: 9px;
+    background: var(--ink-3);
+    border: 1px solid var(--line-dark);
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--amber);
+  }
+  .node .txt .t{ font-weight:600; font-size:0.94rem; color: var(--paper); }
+  .node .txt .d{ font-size: 0.82rem; color: var(--muted-light); margin-top:2px; }
+  .node-line{
+    width:1px; height: 22px; background: var(--line-dark);
+    margin-left: 19px;
+    position: relative;
+    overflow:hidden;
+  }
+  .node-line::after{
+    content:"";
+    position:absolute;
+    top:-100%; left:0; width:100%; height:100%;
+    background: linear-gradient(var(--teal), transparent);
+    animation: flow 2.6s linear infinite;
+  }
+  @keyframes flow{
+    0%{ top:-100%; }
+    100%{ top:100%; }
+  }
+  .signal-card .result{
+    margin-top: 8px;
+    background: var(--teal-soft);
+    border: 1px solid rgba(46,156,144,0.35);
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: #9fe0d7;
+  }
+
+  /* ---------- TRUST STRIP ---------- */
+  .trust{
+    background: var(--ink);
+    border-top: 1px solid var(--line-dark);
+    padding: 26px 0 40px;
+  }
+  .trust-inner{
+    display:flex;
+    align-items:center;
+    gap: 28px;
+    flex-wrap:wrap;
+    justify-content:space-between;
+  }
+  .trust-label{
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform:uppercase;
+    color: var(--muted-light);
+    white-space:nowrap;
+  }
+  .trust-stack{
+    display:flex; gap: 14px; flex-wrap:wrap;
+  }
+  .trust-stack span{
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    color: var(--paper);
+    border: 1px solid var(--line-dark);
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: var(--ink-2);
+  }
+
+  /* ---------- SERVICES ---------- */
+  .services{
+    background: var(--paper);
+    padding: 120px 0;
+  }
+  .service-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+  }
+  .service-card{
+    background: #fff;
+    border: 1px solid var(--line-light);
+    border-radius: var(--radius);
+    padding: 34px 28px;
+    transition: border-color .25s ease, transform .25s ease;
+  }
+  .service-card:hover{ transform: translateY(-4px); border-color: var(--amber); }
+  .service-card .icon{
+    width: 46px; height:46px;
+    border-radius: 12px;
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom: 22px;
+  }
+  .service-card:nth-child(1) .icon{ background: var(--amber-soft); }
+  .service-card:nth-child(2) .icon{ background: var(--teal-soft); }
+  .service-card:nth-child(3) .icon{ background: var(--amber-soft); }
+  .service-card .icon svg{ width:22px; height:22px; }
+  .service-card h3{ font-size: 1.24rem; margin-bottom: 10px; }
+  .service-card p.desc{ color: var(--muted); font-size: 0.95rem; margin-bottom: 20px; }
+  .service-card ul li{
+    font-size: 0.88rem;
+    color: var(--text-dark);
+    padding: 8px 0;
+    border-top: 1px solid var(--line-light);
+    display:flex; align-items:center; gap:9px;
+  }
+  .service-card ul li::before{
+    content:"";
+    width:5px; height:5px; border-radius:50%;
+    background: var(--amber);
+    flex-shrink:0;
+  }
+  .service-card:nth-child(2) ul li::before{ background: var(--teal); }
+  .service-card .tag-for{
+    margin-top: 20px;
+    font-family: var(--mono);
+    font-size: 0.76rem;
+    color: var(--muted);
+  }
+
+  /* ---------- WORK ---------- */
+  .work{
+    background: var(--paper-2);
+    padding: 120px 0;
+  }
+  .flagship{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    background: var(--ink);
+    border-radius: 22px;
+    overflow:hidden;
+    margin-bottom: 30px;
+  }
+  .flagship-copy{
+    padding: 52px 48px;
+    color: var(--paper);
+  }
+  .flagship-copy .kicker{
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--amber);
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    margin-bottom: 14px;
+  }
+  .flagship-copy h3{ font-size: 1.7rem; margin-bottom: 14px; }
+  .flagship-copy p{ color: var(--muted-light); font-size: 0.98rem; margin-bottom: 22px; }
+  .flagship-features{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 18px;
+    margin-bottom: 26px;
+  }
+  .flagship-features div{
+    font-size: 0.85rem;
+    color: var(--paper);
+    display:flex; align-items:center; gap:8px;
+  }
+  .flagship-features div::before{
+    content:"✓";
+    color: var(--teal);
+    font-weight:700;
+    font-size: 0.75rem;
+  }
+  .stack-tags{ display:flex; gap:8px; flex-wrap:wrap; }
+  .stack-tags span{
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--muted-light);
+    border: 1px solid var(--line-dark);
+    padding: 5px 11px;
+    border-radius: 999px;
+  }
+  .flagship-visual{
+    background: var(--ink-2);
+    padding: 40px;
+    display:flex;
+    align-items:center;
+    border-left: 1px solid var(--line-dark);
+  }
+
+  .work-grid{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 26px;
+  }
+  .work-card{
+    background: #fff;
+    border-radius: var(--radius);
+    border: 1px solid var(--line-light);
+    padding: 30px 28px;
+  }
+  .work-card .kicker{
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--teal);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+  }
+  .work-card h4{ font-size: 1.2rem; margin-bottom: 8px; }
+  .work-card p{ color: var(--muted); font-size: 0.92rem; margin-bottom: 16px;}
+  .work-card .feat-list{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom: 18px;}
+  .work-card .feat-list span{
+    font-size: 0.78rem;
+    background: var(--paper-2);
+    padding: 5px 10px;
+    border-radius: 6px;
+    color: var(--text-dark);
+  }
+  .work-card .stack-tags span{
+    color: var(--muted);
+    border-color: var(--line-light);
+  }
+
+  /* ---------- PROCESS ---------- */
+  .process{
+    background: var(--paper);
+    padding: 120px 0;
+  }
+  .process-list{
+    position:relative;
+  }
+  .process-list::before{
+    content:"";
+    position:absolute;
+    left: 27px; top: 14px; bottom:14px;
+    width: 1px;
+    background: repeating-linear-gradient(to bottom, var(--amber) 0 6px, transparent 6px 12px);
+  }
+  .process-item{
+    display:grid;
+    grid-template-columns: 56px 1fr;
+    gap: 26px;
+    padding: 26px 0;
+    align-items:flex-start;
+  }
+  .process-item .step-num{
+    width: 54px; height:54px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: var(--amber);
+    font-family: var(--mono);
+    font-size: 0.92rem;
+    display:flex; align-items:center; justify-content:center;
+    z-index:1;
+    border: 1px solid var(--line-light);
+  }
+  .process-item h4{ font-size: 1.15rem; margin-bottom: 6px; }
+  .process-item p{ color: var(--muted); font-size: 0.95rem; max-width: 560px; }
+
+  /* ---------- WHY US ---------- */
+  .why{
+    background: var(--ink);
+    color: var(--paper);
+    padding: 120px 0;
+  }
+  .why .section-head p{ color: var(--muted-light); }
+  .why-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line-dark);
+    border: 1px solid var(--line-dark);
+    border-radius: 16px;
+    overflow:hidden;
+  }
+  .why-card{
+    background: var(--ink);
+    padding: 34px 30px;
+  }
+  .why-card .num{
+    font-family: var(--mono);
+    color: var(--amber);
+    font-size: 0.78rem;
+    margin-bottom: 16px;
+    display:block;
+  }
+  .why-card h4{ font-size: 1.08rem; margin-bottom: 10px; }
+  .why-card p{ color: var(--muted-light); font-size: 0.9rem; }
+
+  /* ---------- ABOUT ---------- */
+  .about{
+    background: var(--paper);
+    padding: 120px 0;
+  }
+  .about-grid{
+    display:grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 64px;
+    align-items:center;
+  }
+  .about-card{
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 20px;
+    padding: 40px 34px;
+    position:relative;
+  }
+  .about-card .avatar{
+    width: 60px; height:60px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--amber), var(--teal));
+    display:flex; align-items:center; justify-content:center;
+    font-family: var(--disp);
+    font-weight:700;
+    font-size: 1.3rem;
+    color: #12161F;
+    margin-bottom: 22px;
+  }
+  .about-card h3{ font-size: 1.3rem; margin-bottom: 4px; }
+  .about-card .role{
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: var(--amber);
+    margin-bottom: 20px;
+  }
+  .about-card .cred-list{ display:flex; flex-direction:column; gap: 12px; }
+  .about-card .cred-list div{
+    font-size: 0.86rem;
+    color: var(--muted-light);
+    display:flex; gap:10px;
+    border-top: 1px solid var(--line-dark);
+    padding-top: 12px;
+  }
+  .about-card .cred-list div span.dot{
+    color: var(--teal); flex-shrink:0;
+  }
+  .about-copy p{ color: var(--muted); font-size: 1.02rem; margin-bottom: 18px; }
+  .about-copy .skills{ display:flex; flex-wrap:wrap; gap:9px; margin-top: 24px; }
+  .about-copy .skills span{
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    padding: 6px 13px;
+    border-radius: 999px;
+    background: var(--paper-2);
+    border: 1px solid var(--line-light);
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact{
+    background: var(--ink);
+    color: var(--paper);
+    padding: 120px 0 90px;
+    position:relative;
+    overflow:hidden;
+  }
+  .contact::before{
+    content:"";
+    position:absolute;
+    width: 600px; height:600px;
+    border-radius:50%;
+    background: radial-gradient(circle, rgba(46,156,144,0.14), transparent 70%);
+    bottom:-300px; left:-200px;
+  }
+  .contact-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+  .contact-copy h2{ margin-bottom: 18px; }
+  .contact-copy p{ color: var(--muted-light); max-width: 460px; margin-bottom: 30px; }
+  .contact-info{ display:flex; flex-direction:column; gap:16px; }
+  .contact-info a{
+    display:flex; align-items:center; gap:12px;
+    font-size: 0.98rem;
+    color: var(--paper);
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line-dark);
+    transition: color .2s ease;
+  }
+  .contact-info a:hover{ color: var(--amber); }
+  .contact-info .lbl{
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--muted-light);
+    text-transform:uppercase;
+    display:block;
+    margin-bottom:3px;
+  }
+  form.contact-form{
+    background: var(--ink-2);
+    border: 1px solid var(--line-dark);
+    border-radius: 18px;
+    padding: 32px;
+  }
+  form.contact-form .field{ margin-bottom: 18px; }
+  form.contact-form label{
+    display:block;
+    font-family: var(--mono);
+    font-size: 0.74rem;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    color: var(--muted-light);
+    margin-bottom: 8px;
+  }
+  form.contact-form input, form.contact-form textarea, form.contact-form select{
+    width:100%;
+    background: var(--ink);
+    border: 1px solid var(--line-dark);
+    border-radius: 9px;
+    padding: 12px 14px;
+    color: var(--paper);
+    font-family: var(--body);
+    font-size: 0.94rem;
+  }
+  form.contact-form input:focus, form.contact-form textarea:focus, form.contact-form select:focus{
+    outline: none;
+    border-color: var(--amber);
+  }
+  form.contact-form textarea{ resize:vertical; min-height:100px; }
+  form.contact-form button{ width:100%; justify-content:center; margin-top: 6px; }
+
+  footer{
+    background: var(--ink);
+    border-top: 1px solid var(--line-dark);
+    padding: 34px 0;
+  }
+  .footer-inner{
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;
+  }
+  footer .brand{ opacity:0.9; }
+  footer .foot-note{
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--muted-light);
+  }
+
+  /* Reveal on scroll */
+  .reveal{ opacity:0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    .reveal{ opacity:1; transform:none; transition:none; }
+    .node-line::after{ animation:none; }
+  }
+
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline: 2px solid var(--amber);
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 980px){
+    .nav-links{ display:none; }
+    .nav-toggle{ display:flex; }
+    .hero-grid{ grid-template-columns: 1fr; }
+    .signal-card{ max-width: 460px; }
+    .service-grid{ grid-template-columns: 1fr; }
+    .flagship{ grid-template-columns: 1fr; }
+    .flagship-visual{ border-left:none; border-top:1px solid var(--line-dark); }
+    .work-grid{ grid-template-columns: 1fr; }
+    .why-grid{ grid-template-columns: 1fr; }
+    .about-grid{ grid-template-columns: 1fr; }
+    .contact-grid{ grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px){
+    .container{ padding: 0 20px; }
+    .hero{ padding: 140px 0 80px; }
+    .hero-meta{ gap: 24px; }
+    .flagship-copy{ padding: 36px 26px; }
+    .flagship-features{ grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="#top" class="brand">NextStep Digital</a>
+    <div class="nav-links">
+      <a href="#services">What We Do</a>
+      <a href="#work">Our Work</a>
+      <a href="#process">Approach</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-ghost-dark" style="padding:10px 20px; font-size:0.88rem;">Start a Conversation</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-panel" id="mobilePanel">
+    <a href="#services">What We Do</a>
+    <a href="#work">Our Work</a>
+    <a href="#process">Approach</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Websites · Software · AI Automation</div>
+        <h1>Your business has a <em>next step</em>.<br>We build the systems that take it.</h1>
+        <p class="lead">NextStep Digital designs websites, custom software, and AI automation for businesses that would rather spend their time serving customers than chasing admin work.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-primary">Let's Work Together
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#work" class="btn btn-ghost-dark">Explore Our Work</a>
+        </div>
+        <div class="hero-meta">
+          <div><div class="num">3</div><div class="label">Core Disciplines</div></div>
+          <div><div class="num">0 → 1</div><div class="label">Idea To Live Product</div></div>
+          <div><div class="num">1</div><div class="label">Founder, End‑To‑End Build</div></div>
+        </div>
+      </div>
+
+      <div class="signal-card reveal">
+        <div class="signal-label"><span><span class="dot"></span>Live workflow — AI Dental Receptionist</span><span>#0114</span></div>
+        <div class="node">
+          <div class="pip">01</div>
+          <div class="txt"><div class="t">Patient calls the clinic</div><div class="d">AI answers on the first ring, no hold music</div></div>
+        </div>
+        <div class="node-line"></div>
+        <div class="node">
+          <div class="pip">02</div>
+          <div class="txt"><div class="t">Understands the request</div><div class="d">New booking, reschedule, or general question</div></div>
+        </div>
+        <div class="node-line"></div>
+        <div class="node">
+          <div class="pip">03</div>
+          <div class="txt"><div class="t">Checks real availability</div><div class="d">Reads the clinic's live calendar, not a guess</div></div>
+        </div>
+        <div class="node-line"></div>
+        <div class="node">
+          <div class="pip">04</div>
+          <div class="txt"><div class="t">Books &amp; confirms by email</div><div class="d">Staff get notified the moment it's done</div></div>
+        </div>
+        <div class="result">✓ appointment_booked → calendar synced → confirmation sent</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="trust">
+    <div class="container trust-inner">
+      <span class="trust-label">Built on tools already running real businesses</span>
+      <div class="trust-stack">
+        <span>Vapi</span><span>n8n</span><span>Google Gemini</span><span>Google Calendar</span><span>Gmail</span><span>Google Sheets</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow">What We Do</div>
+        <h2>Three ways to move your business forward.</h2>
+        <p>Every engagement starts with a real problem, not a template. Here's where we usually start.</p>
+      </div>
+      <div class="service-grid">
+
+        <div class="service-card reveal">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#B9711A" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg></div>
+          <h3>Website Development</h3>
+          <p class="desc">Your website is often the first impression a customer forms of your business. We make sure it's a good one.</p>
+          <ul>
+            <li>Responsive across mobile, tablet, desktop</li>
+            <li>Services, pricing &amp; portfolio pages</li>
+            <li>WhatsApp &amp; Google Maps integration</li>
+            <li>Appointment request forms</li>
+          </ul>
+          <div class="tag-for">Best for: salons, clinics, restaurants, academies, local services</div>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1E7A70" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M3 12h3M18 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></div>
+          <h3>AI &amp; Business Automation</h3>
+          <p class="desc">AI earns its place when it removes real, repeated busywork. We build it around your workflow, not the other way round.</p>
+          <ul>
+            <li>AI receptionists &amp; chatbots</li>
+            <li>Automated appointment scheduling</li>
+            <li>Email &amp; customer inquiry automation</li>
+            <li>Lead collection &amp; workflow automation</li>
+          </ul>
+          <div class="tag-for">Best for: front desks, booking-heavy service businesses</div>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#B9711A" stroke-width="1.8"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13 5l-2 14"/></svg></div>
+          <h3>Custom Software Solutions</h3>
+          <p class="desc">Sometimes an off-the-shelf tool isn't enough. We build software shaped around how your business actually works.</p>
+          <ul>
+            <li>Internal dashboards &amp; management tools</li>
+            <li>Data management applications</li>
+            <li>Database-driven systems</li>
+            <li>Process-specific automation</li>
+          </ul>
+          <div class="tag-for">Best for: businesses outgrowing spreadsheets and manual logs</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="work" id="work">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow">Our Work</div>
+        <h2>Built, tested, and ready to demo.</h2>
+        <p>A look at what we've shipped — starting with the flagship product behind our automation practice.</p>
+      </div>
+
+      <div class="flagship reveal">
+        <div class="flagship-copy">
+          <div class="kicker">Flagship — AI Automation</div>
+          <h3>AI Dental Receptionist</h3>
+          <p>An always-on voice assistant that answers patient calls, understands intent, checks real calendar availability, and books the appointment — no hold queue, no missed call, no double-booking.</p>
+          <div class="flagship-features">
+            <div>Answers every incoming call</div>
+            <div>Books directly into the calendar</div>
+            <div>Sends confirmation emails</div>
+            <div>Notifies staff of changes</div>
+          </div>
+          <div class="stack-tags">
+            <span>Vapi</span><span>n8n</span><span>Google Gemini</span><span>Google Calendar</span><span>Gmail</span>
+          </div>
+        </div>
+        <div class="flagship-visual">
+          <svg viewBox="0 0 300 240" width="100%">
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#E7A23E"/>
+                <stop offset="100%" stop-color="#2E9C90"/>
+              </linearGradient>
+            </defs>
+            <circle cx="150" cy="120" r="86" fill="none" stroke="url(#g1)" stroke-width="1.4" stroke-dasharray="4 7" opacity="0.55">
+              <animateTransform attributeName="transform" type="rotate" from="0 150 120" to="360 150 120" dur="18s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="150" cy="120" r="54" fill="none" stroke="#2E9C90" stroke-width="1" stroke-dasharray="2 5" opacity="0.4">
+              <animateTransform attributeName="transform" type="rotate" from="360 150 120" to="0 150 120" dur="14s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="150" cy="120" r="30" fill="#1A2033" stroke="#E7A23E" stroke-width="1.5"/>
+            <path d="M141 112c0-5 4-9 9-9s9 4 9 9v10c0 5-4 9-9 9s-9-4-9-9v-10z" fill="none" stroke="#F4F2EC" stroke-width="1.6"/>
+            <path d="M135 122c0 8 7 14 15 14s15-6 15-14" fill="none" stroke="#F4F2EC" stroke-width="1.6"/>
+            <line x1="150" y1="136" x2="150" y2="144" stroke="#F4F2EC" stroke-width="1.6"/>
+            <text x="150" y="205" text-anchor="middle" fill="#9BA3C4" font-family="IBM Plex Mono, monospace" font-size="10">incoming_call → booked</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="work-grid">
+        <div class="work-card reveal">
+          <div class="kicker">Personal Productivity</div>
+          <h4>Nova</h4>
+          <p>An AI-powered productivity companion for daily planning, habit tracking, and honest reflection — morning and night.</p>
+          <div class="feat-list">
+            <span>Task management</span><span>Daily planning</span><span>Habit tracking</span><span>Reflections</span><span>AI chatbot</span>
+          </div>
+          <div class="stack-tags"><span>HTML/CSS/JS</span><span>AI APIs</span><span>Supabase</span></div>
+        </div>
+        <div class="work-card reveal">
+          <div class="kicker">Console Application</div>
+          <h4>Personal Expense Tracker</h4>
+          <p>A practical Python console app for managing everyday spending — built to prove out core programming fundamentals cleanly.</p>
+          <div class="feat-list">
+            <span>Add / view expenses</span><span>Search by category</span><span>Spending summaries</span><span>Highest expense tracking</span>
+          </div>
+          <div class="stack-tags"><span>Python</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow">Our Approach</div>
+        <h2>A straight line from idea to launch.</h2>
+        <p>Five stages, always in this order, so nothing gets built before it's understood.</p>
+      </div>
+      <div class="process-list">
+        <div class="process-item reveal">
+          <div class="step-num">01</div>
+          <div><h4>Understand</h4><p>We learn your business, your goals, and the specific problem you're trying to solve — before anything else.</p></div>
+        </div>
+        <div class="process-item reveal">
+          <div class="step-num">02</div>
+          <div><h4>Plan</h4><p>We map the right solution and agree a clear plan with you, so there are no surprises once development starts.</p></div>
+        </div>
+        <div class="process-item reveal">
+          <div class="step-num">03</div>
+          <div><h4>Build</h4><p>We turn the plan into a modern, working product — website, software, or automation — built for daily use.</p></div>
+        </div>
+        <div class="process-item reveal">
+          <div class="step-num">04</div>
+          <div><h4>Launch</h4><p>We take it live and confirm everything behaves exactly as intended, under real conditions.</p></div>
+        </div>
+        <div class="process-item reveal">
+          <div class="step-num">05</div>
+          <div><h4>Improve</h4><p>As your business grows, we come back and grow the system with it.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="why">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow">Why NextStep Digital</div>
+        <h2>Built by someone who ships, not just pitches.</h2>
+        <p>No agency layers, no handoffs between departments — one builder who owns the outcome end to end.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal"><span class="num">01</span><h4>Business-focused</h4><p>We don't build technology for its own sake. Every feature has to earn its place by solving a real problem.</p></div>
+        <div class="why-card reveal"><span class="num">02</span><h4>Modern &amp; responsive</h4><p>Every build works smoothly across mobile, tablet, and desktop — because that's where your customers actually are.</p></div>
+        <div class="why-card reveal"><span class="num">03</span><h4>Personalized, not templated</h4><p>Every business is different, so every solution is scoped around your goals, not a pre-built package.</p></div>
+        <div class="why-card reveal"><span class="num">04</span><h4>Built for growth</h4><p>What we build today is designed to still make sense when your business is twice the size it is now.</p></div>
+        <div class="why-card reveal"><span class="num">05</span><h4>Practical technology</h4><p>From a landing page to a full voice agent, we use exactly as much technology as the problem needs — no more.</p></div>
+        <div class="why-card reveal"><span class="num">06</span><h4>Direct communication</h4><p>You work directly with the person building your product, from first call to launch.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container about-grid">
+      <div class="about-card reveal">
+        <div class="avatar">KS</div>
+        <h3>Komal Sharafat</h3>
+        <div class="role">Founder, NextStep Digital</div>
+        <div class="cred-list">
+          <div><span class="dot">✓</span>Computer Science undergraduate, UET Lahore</div>
+          <div><span class="dot">✓</span>Designed &amp; built a full AI voice agent stack from scratch</div>
+          <div><span class="dot">✓</span>Runs outreach, demos, and delivery personally</div>
+          <div><span class="dot">✓</span>Creates technical explainer &amp; product content on the side</div>
+        </div>
+      </div>
+      <div class="about-copy reveal">
+        <div class="eyebrow">About NextStep Digital</div>
+        <h2>A one-person studio that builds like a bigger team.</h2>
+        <p>NextStep Digital is founded and run by Komal Sharafat, a Computer Science student and developer working across software, AI, and automation. The agency exists to help businesses take a real next step — a first professional website, a repetitive task finally automated, or a piece of software built specifically around how they work.</p>
+        <p>Every project on this page — from the AI dental receptionist to Nova to the expense tracker — was scoped, built, and debugged personally, tool by tool, starting from zero experience on each one. That's the standard client work is held to as well.</p>
+        <div class="skills">
+          <span>Vapi</span><span>n8n</span><span>Google Gemini</span><span>Python</span><span>JavaScript</span><span>Supabase</span><span>Google Workspace APIs</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-copy reveal">
+        <div class="eyebrow">Get In Touch</div>
+        <h2>Let's build your next step.</h2>
+        <p>Have an idea for your business, need a professional website, or want to automate the repetitive parts of your day? Tell us what you're working with — we'll tell you what's possible.</p>
+        <div class="contact-info">
+          <a href="mailto:a20737091@gmail.com">
+            <span>
+              <span class="lbl">Email</span>
+              a20737091@gmail.com
+            </span>
+          </a>
+          <a href="https://wa.me/923298800939" target="_blank" rel="noopener">
+            <span>
+              <span class="lbl">WhatsApp</span>
+              +92 329 8800939
+            </span>
+          </a>
+          <a href="https://www.linkedin.com/in/komal-sharafat-93697538b/" target="_blank" rel="noopener">
+            <span>
+              <span class="lbl">LinkedIn</span>
+              linkedin.com/in/komal-sharafat
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <form class="contact-form reveal" id="contactForm">
+        <div class="field">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" placeholder="Jane Cooper" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="jane@business.com" required>
+        </div>
+        <div class="field">
+          <label for="service">What do you need?</label>
+          <select id="service" name="service">
+            <option>Website Development</option>
+            <option>AI &amp; Business Automation</option>
+            <option>Custom Software Solution</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Tell us about your business</label>
+          <textarea id="message" name="message" placeholder="What are you hoping to achieve?" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <a href="#top" class="brand">NextStep Digital</a>
+    <div class="foot-note">Websites · Software · AI Automation — © 2026 NextStep Digital</div>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const mobilePanel = document.getElementById('mobilePanel');
+  navToggle.addEventListener('click', () => {
+    mobilePanel.classList.toggle('open');
+  });
+  document.querySelectorAll('.mobile-panel a').forEach(a => {
+    a.addEventListener('click', () => mobilePanel.classList.remove('open'));
+  });
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+
+  // Contact form (front-end only — routes to email client)
+  const form = document.getElementById('contactForm');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const service = document.getElementById('service').value;
+    const message = document.getElementById('message').value;
+    const subject = encodeURIComponent('New inquiry: ' + service);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nService: ${service}\n\n${message}`);
+    window.location.href = `mailto:a20737091@gmail.com?subject=${subject}&body=${body}`;
+  });
+</script>
+
+</body>
+</html>
